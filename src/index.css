@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Fallback tokens (RETURN Basketball). applyBrandTheme overrides at runtime. */
+  --c-bg: 5 5 5;
+  --c-fg: 255 255 255;
+  --c-muted: 163 163 163;
+  --c-accent: 255 106 0;
+  --c-accent-hover: 230 92 0;
+  --c-line: 38 38 38;
+  --c-surface: 12 12 12;
+  --font-display: "Playfair Display";
+  --font-body: "Inter";
+}
+
+@layer base {
+  * {
+    @apply border-line;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-bg text-fg font-body antialiased;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: rgb(var(--c-accent));
+    color: rgb(var(--c-bg));
+  }
+
+  :focus-visible {
+    outline: 2px solid rgb(var(--c-accent));
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  .shell {
+    @apply mx-auto w-full max-w-shell px-6 sm:px-8 lg:px-12;
+  }
+
+  .eyebrow {
+    @apply text-[11px] font-medium uppercase tracking-eyebrow text-accent;
+  }
+
+  .display {
+    font-family: var(--font-display), "Playfair Display", serif;
+  }
+
+  /* Spotlight reveal: the comeback image is masked to a soft circle that
+     follows the pointer. Driven by --mx / --my / --mr set in JS. */
+  .spotlight-reveal {
+    -webkit-mask-image: radial-gradient(
+      circle var(--mr, 0px) at var(--mx, 50%) var(--my, 50%),
+      #000 0%,
+      #000 62%,
+      transparent 100%
+    );
+    mask-image: radial-gradient(
+      circle var(--mr, 0px) at var(--mx, 50%) var(--my, 50%),
+      #000 0%,
+      #000 62%,
+      transparent 100%
+    );
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
