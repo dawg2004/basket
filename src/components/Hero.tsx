@@ -10,10 +10,12 @@ function Layer({
   src,
   alt,
   placeholder,
+  imgClassName = "",
 }: {
   src: string;
   alt: string;
   placeholder: React.ReactNode;
+  imgClassName?: string;
 }) {
   const [ok, setOk] = useState(true);
   return (
@@ -24,7 +26,7 @@ function Layer({
           src={src}
           alt={alt}
           onError={() => setOk(false)}
-          className="absolute inset-0 h-full w-full object-cover"
+          className={`absolute inset-0 h-full w-full object-cover object-[60%_center] ${imgClassName}`}
           draggable={false}
         />
       )}
@@ -42,17 +44,27 @@ export function Hero({ brand }: { brand: Brand }) {
       {...bind}
       className="relative flex min-h-[100svh] items-end overflow-hidden"
     >
-      {/* base: the setback */}
-      <Layer src={hero.images.base} alt={hero.images.baseAlt} placeholder={<BasePlaceholder />} />
+      {/* base: the setback — dimmed and cooled */}
+      <Layer
+        src={hero.images.base}
+        alt={hero.images.baseAlt}
+        placeholder={<BasePlaceholder />}
+        imgClassName="brightness-[0.3] saturate-[0.5] contrast-[1.05]"
+      />
 
-      {/* reveal: the comeback, masked to the spotlight */}
+      {/* reveal: the comeback — full charge, masked to the spotlight */}
       <div ref={maskRef} className="spotlight-reveal absolute inset-0">
-        <Layer src={hero.images.reveal} alt={hero.images.revealAlt} placeholder={<RevealPlaceholder />} />
+        <Layer
+          src={hero.images.reveal}
+          alt={hero.images.revealAlt}
+          placeholder={<RevealPlaceholder />}
+          imgClassName="brightness-110 saturate-[1.25] contrast-[1.06]"
+        />
       </div>
 
       {/* legibility wash */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-bg via-bg/35 to-bg/55" />
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-bg/70 via-transparent to-transparent" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-bg via-bg/20 to-bg/45" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-bg/65 via-transparent to-transparent" />
 
       {/* copy */}
       <div className="shell relative z-10 pb-16 pt-32 sm:pb-24">
@@ -118,10 +130,10 @@ export function Hero({ brand }: { brand: Brand }) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1 }}
-          className="mt-12 flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-muted"
+          className="mt-12 flex items-center gap-2 text-xs tracking-[0.08em] text-muted"
         >
           <MousePointer2 size={14} className="text-accent" />
-          Move across the image to reveal the return
+          画像の上をなぞると、復帰の姿が照らし出される
         </motion.div>
       </div>
     </section>

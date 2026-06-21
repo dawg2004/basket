@@ -41,8 +41,7 @@ export function Method({ brand }: { brand: Brand }) {
 
         <Reveal delay={0.1}>
           <p className="mt-8 max-w-2xl text-sm leading-relaxed text-muted">
-            Each stage is delivered with partner medical and performance specialists. Progression
-            between stages is decided by those providers — never assumed.
+            各ステージは、提携する医療・パフォーマンスの専門家とともに提供されます。ステージ間の進行は、その専門家が判断するものであり、前提として進めることはありません。
           </p>
         </Reveal>
       </div>

@@ -3,15 +3,19 @@ import type { Brand } from "./types";
 /**
  * RETURN Basketball — the flagship public brand.
  *
- * Legal positioning is encoded in the copy itself: support / education /
- * network language only, no treatment claims, no guaranteed outcomes.
- * Medical services are always referenced through partner providers.
+ * Language policy: each section's TITLE block (eyebrow + headline), the
+ * wordmark, the tagline, the hero headline, and tight domain labels stay in
+ * English as the brand's identity anchors. All supporting copy is Japanese.
+ *
+ * Legal positioning is encoded in the copy: support / education / network
+ * language only. RETURN itself never claims to treat, cure, or guarantee.
+ * Medical care is always referenced through partner providers (提携医療機関).
  */
 export const returnBasketball: Brand = {
   id: "return-basketball",
   mark: "RETURN",
   submark: "Basketball",
-  parentOrg: "General Incorporated Association — Regenerative Medicine Network",
+  parentOrg: "一般社団法人 再生医療ネットワーク",
   tagline: { line1: "More Than Recovery.", line2: "Return To Play." },
 
   theme: {
@@ -31,26 +35,28 @@ export const returnBasketball: Brand = {
   },
 
   nav: [
-    { label: "Programs", href: "#method" },
-    { label: "Athletes", href: "#stories" },
-    { label: "Recovery", href: "#network" },
-    { label: "Network", href: "#partners" },
-    { label: "Partners", href: "#partners" },
+    { label: "プログラム", href: "#method" },
+    { label: "アスリート", href: "#stories" },
+    { label: "リカバリー", href: "#network" },
+    { label: "ネットワーク", href: "#partners" },
+    { label: "パートナー", href: "#partners" },
   ],
-  navCta: "Book Assessment",
+  navCta: "アセスメントを予約",
 
   hero: {
     images: {
-      base: "/hero-base.jpg",
-      reveal: "/hero-reveal.jpg",
-      baseAlt: "Basketball athlete resting courtside during recovery",
-      revealAlt: "The same athlete back in explosive competition",
+      // Single cinematic asset; the spotlight charges it from dimmed to vivid,
+      // so moving the pointer lifts the athlete out of shadow.
+      base: "/hero.jpg",
+      reveal: "/hero.jpg",
+      baseAlt: "発光する膝と骨格のオーバーレイをまとい、ドリブルするバスケットボール選手",
+      revealAlt: "光に照らし出され、回復のエネルギーに満ちた同じ選手",
     },
     headline: { line1: "Recovery reveals", line2: "your next game" },
     subheadline:
-      "Elite recovery programs designed for basketball athletes seeking a safe and confident return to competition.",
-    primaryCta: "Start Recovery",
-    secondaryCta: "Become A Partner",
+      "安全で確かな競技復帰を目指すバスケットボールアスリートのための、エリートリカバリープログラム。",
+    primaryCta: "リカバリーを始める",
+    secondaryCta: "パートナーになる",
   },
 
   method: {
@@ -60,17 +66,17 @@ export const returnBasketball: Brand = {
       {
         index: "01",
         title: "Assessment",
-        lines: ["Movement analysis.", "Ultrasound evaluation.", "Injury history review."],
+        lines: ["動作分析", "超音波評価", "受傷歴の確認"],
       },
       {
         index: "02",
         title: "PRP Recovery",
-        lines: ["Evidence-based PRP protocols.", "Individualized planning."],
+        lines: ["エビデンスに基づくPRPプロトコル", "個別最適化されたプランニング"],
       },
       {
         index: "03",
         title: "Return To Play",
-        lines: ["Performance testing.", "Reconditioning.", "Competition readiness."],
+        lines: ["パフォーマンステスト", "再コンディショニング", "競技復帰の判定"],
       },
     ],
   },
@@ -79,26 +85,26 @@ export const returnBasketball: Brand = {
     eyebrow: "Who We Support",
     headline: "Built for every level of the game.",
     cards: [
-      { title: "Professional Players", note: "Top-flight competition" },
-      { title: "B.League", note: "Domestic professional" },
-      { title: "3x3 Athletes", note: "Half-court specialists" },
-      { title: "Student Athletes", note: "Collegiate & high school" },
-      { title: "International Prospects", note: "Cross-border careers" },
-      { title: "Street Basketball Athletes", note: "Outdoor & culture" },
+      { title: "プロ選手", note: "トップリーグの競技者" },
+      { title: "B.LEAGUE", note: "国内プロリーグ" },
+      { title: "3x3アスリート", note: "ハーフコートの専門家" },
+      { title: "学生アスリート", note: "大学・高校" },
+      { title: "海外挑戦プロスペクト", note: "国境を越えるキャリア" },
+      { title: "ストリートバスケアスリート", note: "アウトドア＆カルチャー" },
     ],
   },
 
   network: {
     eyebrow: "Recovery Is A Team Sport",
     headline: "No single step returns an athlete to play.",
-    note: "PRP is one coordinated stage inside a longer pathway — not a shortcut, and not a cure. Every return is the result of specialists working in sequence.",
+    note: "PRPは長い道のりの中の、連携された一段階にすぎません。近道でも、特効でもない。すべての復帰は、専門家が順を追って積み上げた結果です。",
     nodes: [
-      { label: "Athlete", role: "The center of the plan" },
-      { label: "Sports Doctor", role: "Diagnosis & medical oversight" },
-      { label: "PRP Protocol", role: "Evidence-based recovery support" },
-      { label: "Physical Therapist", role: "Movement restoration" },
-      { label: "Strength Coach", role: "Reconditioning & load" },
-      { label: "Return To Play", role: "Competition readiness" },
+      { label: "アスリート", role: "プランの中心" },
+      { label: "スポーツドクター", role: "診断と医学的管理" },
+      { label: "PRPプロトコル", role: "エビデンスに基づく回復サポート" },
+      { label: "理学療法士", role: "動作の再建" },
+      { label: "ストレングスコーチ", role: "再コンディショニングと負荷管理" },
+      { label: "競技復帰", role: "復帰可否の判定" },
     ],
   },
 
@@ -106,12 +112,12 @@ export const returnBasketball: Brand = {
     eyebrow: "Partner Network",
     headline: "An ecosystem, not a clinic.",
     categories: [
-      { name: "Sports Medicine", slots: 4 },
-      { name: "Physical Therapy", slots: 4 },
-      { name: "Strength & Conditioning", slots: 4 },
-      { name: "Basketball Academies", slots: 4 },
-      { name: "3x3 Teams", slots: 4 },
-      { name: "University Programs", slots: 4 },
+      { name: "スポーツ医療", slots: 4 },
+      { name: "理学療法", slots: 4 },
+      { name: "ストレングス＆コンディショニング", slots: 4 },
+      { name: "バスケットボールアカデミー", slots: 4 },
+      { name: "3x3チーム", slots: 4 },
+      { name: "大学プログラム", slots: 4 },
     ],
   },
 
@@ -119,25 +125,25 @@ export const returnBasketball: Brand = {
     eyebrow: "Athlete Stories",
     headline: "Setbacks, and the return that followed.",
     disclaimer:
-      "Illustrative placeholders. Recovery timelines and outcomes differ for every athlete and are determined by partner medical providers.",
+      "これらは説明用のプレースホルダーです。回復の経過や結果はアスリートごとに異なり、提携医療機関が判断します。",
     items: [
       {
-        condition: "Patellar Tendinopathy",
-        before: "Pain on every landing.",
-        after: "Back to full training load.",
-        tag: "Knee",
+        condition: "膝蓋腱症",
+        before: "着地のたびに痛みが走った。",
+        after: "フルの練習量へ復帰。",
+        tag: "膝",
       },
       {
-        condition: "Ankle Sprain",
-        before: "Lost lateral confidence.",
-        after: "Cutting without hesitation.",
-        tag: "Ankle",
+        condition: "足関節捻挫",
+        before: "横の動きへの自信を失っていた。",
+        after: "ためらいなく切り返す。",
+        tag: "足首",
       },
       {
-        condition: "Achilles Tendon Injury",
-        before: "A long road back.",
-        after: "Explosive off both feet.",
-        tag: "Achilles",
+        condition: "アキレス腱損傷",
+        before: "長い道のりだった。",
+        after: "両足で爆発的に跳ぶ。",
+        tag: "アキレス腱",
       },
     ],
   },
@@ -146,39 +152,39 @@ export const returnBasketball: Brand = {
     eyebrow: "About",
     headline: "Built Around Recovery.",
     body: [
-      "RETURN Basketball is supported by a professional network dedicated to PRP education, quality standards, and athlete recovery support.",
-      "The focus is helping athletes return to competition through structured recovery pathways — coordinated with the specialists who deliver each stage of care.",
+      "RETURN Basketballは、PRPに関する教育、品質基準、そしてアスリートの回復サポートに取り組む専門家ネットワークに支えられています。",
+      "目的は、構造化されたリカバリーの道筋を通じてアスリートの競技復帰を支えること。各ステージのケアは、それを担う専門家と連携して進めます。",
     ],
   },
 
   footer: {
     columns: [
       {
-        title: "Navigation",
+        title: "ナビゲーション",
         items: [
-          { label: "Programs", href: "#method" },
-          { label: "Athletes", href: "#stories" },
-          { label: "Network", href: "#network" },
-          { label: "Partners", href: "#partners" },
+          { label: "プログラム", href: "#method" },
+          { label: "アスリート", href: "#stories" },
+          { label: "ネットワーク", href: "#network" },
+          { label: "パートナー", href: "#partners" },
         ],
       },
       {
-        title: "Connect",
+        title: "コンタクト",
         items: [
-          { label: "Contact", href: "#contact" },
+          { label: "お問い合わせ", href: "#contact" },
           { label: "Instagram", href: "#instagram" },
-          { label: "Partner Inquiry", href: "#partners" },
+          { label: "パートナー申込", href: "#partners" },
         ],
       },
       {
-        title: "Legal",
+        title: "法務",
         items: [
-          { label: "Privacy Policy", href: "#privacy" },
-          { label: "Terms", href: "#terms" },
+          { label: "プライバシーポリシー", href: "#privacy" },
+          { label: "利用規約", href: "#terms" },
         ],
       },
     ],
     legal:
-      "RETURN Basketball is a recovery education and partner network. It does not provide medical services. All medical care is delivered by independent partner providers.",
+      "RETURN Basketballは、リカバリー教育とパートナーネットワークです。医療サービスは提供しません。すべての医療行為は、独立した提携医療機関が行います。",
   },
 };

@@ -15,7 +15,7 @@ export default {
       },
       fontFamily: {
         display: ["var(--font-display)", "Playfair Display", "serif"],
-        body: ["var(--font-body)", "Inter", "system-ui", "sans-serif"],
+        body: ["var(--font-body)", "Noto Sans JP", "Inter", "system-ui", "sans-serif"],
       },
       letterSpacing: {
         eyebrow: "0.34em",

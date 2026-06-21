@@ -19,7 +19,7 @@ export function Network({ brand }: { brand: Brand }) {
 
           <ol className="space-y-3">
             {network.nodes.map((node, i) => {
-              const accent = node.label === "PRP Protocol";
+              const accent = node.label.includes("PRP");
               return (
                 <motion.li
                   key={node.label}
