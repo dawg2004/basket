@@ -133,7 +133,7 @@ export function Hero({ brand }: { brand: Brand }) {
           className="mt-12 flex items-center gap-2 text-xs tracking-[0.08em] text-muted"
         >
           <MousePointer2 size={14} className="text-accent" />
-          画像の上をなぞると、復帰の姿が照らし出される
+          画像をなぞる、またはタップして、復帰の姿を照らし出す
         </motion.div>
       </div>
     </section>
