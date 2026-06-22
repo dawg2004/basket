@@ -71,6 +71,33 @@
       transparent 100%
     );
   }
+
+  /* Pointer-following glow for content sections (Method cards). Driven by
+     --sx / --sy (px) and --si (0|1) set by usePointerSpot. */
+  .spot-glow {
+    background: radial-gradient(
+      circle 280px at var(--sx, 50%) var(--sy, 50%),
+      rgb(var(--c-accent) / 0.16),
+      transparent 60%
+    );
+    opacity: var(--si, 0);
+    transition: opacity 0.45s ease;
+  }
+  .spot-border {
+    border: 1px solid rgb(var(--c-accent) / 0.65);
+    -webkit-mask-image: radial-gradient(
+      circle 200px at var(--sx, 50%) var(--sy, 50%),
+      #000 0%,
+      transparent 70%
+    );
+    mask-image: radial-gradient(
+      circle 200px at var(--sx, 50%) var(--sy, 50%),
+      #000 0%,
+      transparent 70%
+    );
+    opacity: var(--si, 0);
+    transition: opacity 0.45s ease;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
