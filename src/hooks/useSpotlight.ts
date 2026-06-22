@@ -17,7 +17,7 @@ type SpotlightHandlers = {
 };
 
 const DESKTOP_RADIUS = 240; // px — cursor spotlight on hover devices
-const MOBILE_RADIUS = 35; // px — small spotlight for touch screens
+const MOBILE_RADIUS = 57; // px — small spotlight for touch screens
 
 const isFinePointer = () =>
   typeof window !== "undefined" &&
