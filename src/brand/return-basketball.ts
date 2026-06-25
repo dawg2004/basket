@@ -40,6 +40,7 @@ export const returnBasketball: Brand = {
     { label: "リカバリー", href: "#network" },
     { label: "ネットワーク", href: "#partners" },
     { label: "パートナー", href: "#partners" },
+    { label: "RMNW", href: "https://rmnw.jp/" },
   ],
   navCta: "アセスメントを予約",
 

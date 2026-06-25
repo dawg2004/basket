@@ -43,15 +43,19 @@ export function Nav({ brand }: { brand: Brand }) {
           {Wordmark}
 
           <div className="hidden items-center gap-9 lg:flex">
-            {brand.nav.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                className="text-sm text-muted transition-colors hover:text-fg"
-              >
-                {item.label}
-              </a>
-            ))}
+            {brand.nav.map((item) => {
+              const external = item.href.startsWith("http");
+              return (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                  className="text-sm text-muted transition-colors hover:text-fg"
+                >
+                  {item.label}
+                </a>
+              );
+            })}
           </div>
 
           <div className="flex items-center gap-3">
@@ -88,6 +92,9 @@ export function Nav({ brand }: { brand: Brand }) {
                 <motion.a
                   key={item.label}
                   href={item.href}
+                  {...(item.href.startsWith("http")
+                    ? { target: "_blank", rel: "noopener noreferrer" }
+                    : {})}
                   onClick={() => setOpen(false)}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
