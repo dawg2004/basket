@@ -22,16 +22,13 @@ export function Nav({ brand }: { brand: Brand }) {
   }, [open]);
 
   const Wordmark = (
-    <a href="#top" className="group flex items-center gap-3" aria-label={`${brand.mark} ${brand.submark}`}>
+    <a href="#top" className="group flex items-center" aria-label={brand.mark}>
       <img
         src="/logo.png"
         alt={brand.mark}
-        className="h-7 w-auto sm:h-8"
+        className="h-10 w-auto sm:h-12"
         draggable={false}
       />
-      <span className="text-[10px] font-medium uppercase tracking-[0.28em] text-muted transition-colors group-hover:text-fg">
-        {brand.submark}
-      </span>
     </a>
   );
 
