@@ -63,7 +63,7 @@ export function Nav({ brand }: { brand: Brand }) {
           <div className="flex items-center gap-3">
             <a
               href="#contact"
-              className="hidden rounded-full bg-fg px-5 py-2.5 text-sm font-medium text-bg transition-colors hover:bg-accent hover:text-fg sm:inline-flex"
+              className="hidden rounded-full bg-fg px-3 py-1.5 text-xs font-medium text-bg transition-colors hover:bg-accent hover:text-fg sm:inline-flex"
             >
               {brand.navCta}
             </a>
